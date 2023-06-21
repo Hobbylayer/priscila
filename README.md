@@ -20,14 +20,10 @@ Si queremos hacer un build es necesario verificar que el archivo js que llamamos
 
 ### Build
 
-Ejecutar lso siguentes comando
+Ingresa al directorio electron y ejecuta el sigueinte comando
 
 ```bash
-cd app && yarn build
-```
-
-```bash
-cd .. && cd electron && yarn prebuild && yarn make
+yarn build
 ```
 
 En caso de recibir error durante el proceso de build revisar que se tengan instaladas la depedencias [node-gyp](https://github.com/nodejs/node-gyp#on-windows)
