@@ -16,15 +16,7 @@ fs.readdir(sourceDirPath, (err, files) => {
 
     fs.copyFile(sourceFilePath, destinationFilePath, (err) => {
       if (err) throw err;
-      console.log(
-        `El archivo ${file} ha sido copiado al directorio de destino.`
-      );
+      console.log(`File successfully copied`);
     });
   });
 });
-
-// // Copiar el archivo al directorio de destino
-// fs.copyFile(sourceFilePath, path.join(destinationDirPath, "rjs.js"), (err) => {
-//   if (err) throw err;
-//   console.log("El archivo ha sido copiado al directorio de destino.");
-// });
