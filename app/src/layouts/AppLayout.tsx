@@ -21,7 +21,7 @@ import PersonIcon from "@mui/icons-material/Person";
 
 // routes
 
-import { Link as RouterLink } from "react-router-dom";
+import { Link as RouterLink } from "wouter";
 
 const drawerWidth = 240;
 
@@ -76,21 +76,29 @@ const AppLayout = ({ children }: { children?: ReactNode }) => {
         </DrawerHeader>
         <Divider />
         <List>
-          <Link sx={linkstyle} component={RouterLink} to={"/"}>
-            <ListItem>
-              <ListItemIcon>
-                <DashboardIcon />
-              </ListItemIcon>
-              <ListItemText primary="Inicio" />
-            </ListItem>
+          <Link sx={linkstyle} component={RouterLink} href={"/"}>
+            <a>
+              <ListItem
+                sx={{
+                  cursor: "pointer",
+                }}
+              >
+                <ListItemIcon>
+                  <DashboardIcon />
+                </ListItemIcon>
+                <ListItemText primary="Inicio" />
+              </ListItem>
+            </a>
           </Link>
-          <Link sx={linkstyle} component={RouterLink} to="/s26">
-            <ListItem>
-              <ListItemIcon>
-                <PersonIcon />
-              </ListItemIcon>
-              <ListItemText primary="s26" />
-            </ListItem>
+          <Link sx={linkstyle} component={RouterLink} href="/s26">
+            <a>
+              <ListItem>
+                <ListItemIcon>
+                  <PersonIcon />
+                </ListItemIcon>
+                <ListItemText primary="s26" />
+              </ListItem>
+            </a>
           </Link>
         </List>
       </Drawer>
