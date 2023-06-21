@@ -1,8 +1,14 @@
 const Sequelize = require("sequelize");
+const { app } = require("electron");
+const path = require("path");
+
+const appPath = app.isPackaged ? path.dirname(app.getPath("exe")) : __dirname;
+
+const dbPath = path.join(appPath, "database.sqlite");
 
 const sequelize = new Sequelize({
   dialect: "sqlite",
-  storage: "./database.sqlite",
+  storage: dbPath,
 });
 
 const db = {};

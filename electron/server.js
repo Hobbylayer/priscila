@@ -18,7 +18,9 @@ app.get("/users", async (req, res) => {
     res.json(users);
   } catch (error) {
     console.error(error);
-    res.status(500).json({ error: "Error al obtener los usuarios" });
+    res
+      .status(500)
+      .json({ error: "Error al obtener los usuarios", info: error });
   }
 });
 
