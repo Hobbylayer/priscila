@@ -9,7 +9,8 @@
     "start": "electron-forge start",
     "package": "electron-forge package",
     "make": "electron-forge make",
-    "build:macos": "electron-forge make --platform=darwin --arch=arm64"
+    "build:macos": "electron-forge make --platform=darwin --arch=arm64",
+    "prebuild": "node ./pre-build.js"
   },
   "devDependencies": {
     "@electron-forge/cli": "^6.2.1",

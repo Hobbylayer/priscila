@@ -21,7 +21,7 @@ const createWindow = () => {
     slashes: true,
   });
 
-  if (isDev) return win.loadURL(" http://127.0.0.1:5173/");
+  if (isDev) return win.loadURL("http://127.0.0.1:5173/");
   win.loadURL(startUrl);
 };
 
