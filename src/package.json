@@ -10,7 +10,8 @@
     "package": "electron-forge package",
     "make": "electron-forge make",
     "build:macos": "electron-forge make --platform=darwin --arch=arm64",
-    "build": "cd ../app && yarn build && cd .. && cd electron && yarn prebuild && yarn make"
+    "prebuild": "node ./pre-build.js",
+    "build": "cd ./ui && yarn build && cd .. && yarn prebuild && yarn make"
   },
   "devDependencies": {
     "@electron-forge/cli": "^6.2.1",
