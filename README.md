@@ -4,19 +4,21 @@ Aplicación contable
 
 ## Preparacion del ambiente de desarrollo
 
-### Frontend
+### UI
+
+Utilizamos react para construir la ui
 
 ```bash
-cd ./app yarn
+cd ./src/ui yarn
 ```
 
-### Electron
+### Electron dependencies and server
 
 ```bash
-cd ./electron yarn
+cd ./src yarn
 ```
 
-Si queremos hacer un build es necesario verificar que el archivo js que llamamos en sr/index.html sea el correcto ya que con cada build vite crea un nuevo hash
+Si queremos hacer un build es necesario verificar que el archivo js que llamamos en ./src/ui/src/index.html sea el correcto ya que con cada build vite crea un nuevo hash
 
 ### Build
 
