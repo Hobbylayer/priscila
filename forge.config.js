@@ -2,13 +2,6 @@ module.exports = {
   packagerConfig: {
     asar: true,
   },
-  entryPoints: [
-    {
-      // ...
-      entryPoint: "../app/dist/main.js",
-      // ...
-    },
-  ],
   rebuildConfig: {},
   makers: [
     {

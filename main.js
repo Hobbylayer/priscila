@@ -3,9 +3,9 @@ const path = require("path");
 const url = require("url");
 const db = require("./src/server/database");
 const { settings } = require("./settings");
-if (settings.isDev) return require("./src/server/seed");
 
 const isDev = settings.isDev;
+if (isDev) require("./src/server/seed");
 
 const createWindow = () => {
   const win = new BrowserWindow({
@@ -25,8 +25,8 @@ const createWindow = () => {
 
   console.log(startUrl);
 
-  if (isDev) return win.loadURL("http://127.0.0.1:5173/");
-  win.loadURL(startUrl);
+  if (isDev) win.loadURL("http://localhost:5173/");
+  else win.loadURL(startUrl);
 };
 
 app.whenReady().then(async () => {

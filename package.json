@@ -11,7 +11,7 @@
     "make": "electron-forge make",
     "build:macos": "electron-forge make --platform=darwin --arch=arm64",
     "prebuild": "node ./pre-build.js",
-    "build": "cd ./ui && yarn build && cd .. && yarn prebuild && yarn make"
+    "build": "cd ./src/ui && yarn build && cd ../.. && yarn prebuild && yarn make"
   },
   "devDependencies": {
     "@electron-forge/cli": "^6.2.1",
