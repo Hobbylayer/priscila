@@ -1,7 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 
-const sourceDirPath = path.join(__dirname, "./ui/dist/assets");
+const sourceDirPath = path.join(__dirname, "./src/ui/dist/assets");
 const destinationDirPath = path.join(__dirname, "./");
 
 fs.readdir(sourceDirPath, (err, files) => {

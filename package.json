@@ -1,9 +1,9 @@
 {
   "name": "priscila",
   "version": "1.0.0",
-  "description": "aplicacion contable",
+  "description": "app de seguimiento de actividades administrativas",
   "main": "main.js",
-  "author": "hoobylayer",
+  "author": "hobbylayer",
   "license": "MIT",
   "scripts": {
     "start": "electron-forge start",

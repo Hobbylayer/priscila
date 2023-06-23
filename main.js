@@ -1,9 +1,9 @@
 const { app, BrowserWindow } = require("electron");
 const path = require("path");
 const url = require("url");
-const db = require("./server/database");
+const db = require("./src/server/database");
 const { settings } = require("./settings");
-if (settings.isDev) return require("./server/seed");
+if (settings.isDev) return require("./src/server/seed");
 
 const isDev = settings.isDev;
 
@@ -32,7 +32,7 @@ const createWindow = () => {
 app.whenReady().then(async () => {
   await db.sequelize.authenticate();
   await db.sequelize.sync({ force: true });
-  require("./server/index.js");
+  require("./src/server/index");
   createWindow();
   app.on("activate", () => {
     if (BrowserWindow.getAllWindows().length === 0) createWindow();
