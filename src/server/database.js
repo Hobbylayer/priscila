@@ -4,7 +4,7 @@ const path = require("path");
 
 const appPath = app.isPackaged ? path.dirname(app.getPath("exe")) : __dirname;
 
-console.log(appPath);
+console.log('PATH:', appPath, app.isPackaged);
 
 const dbPath = path.join(appPath, "database.sqlite");
 
