@@ -2,7 +2,6 @@ const fs = require('fs');
 const path = require('path');
 const Sequelize = require('sequelize');
 const basename = path.basename(__filename);
-// const electron = require('electron');
 const { settings } = require('../../../settings');
 
 const isDev = settings.isDev;
@@ -10,12 +9,7 @@ const config = isDev
 	? require(__dirname + '/../config/config.json')['development']
 	: require(__dirname + '/../config/config.json')['production'];
 
-const appPath = process.env.APP_PATH || __dirname + '/../';
-// console.log('envPATH',appPath)
-// const appPath = app?.isPackaged
-// 	? path.dirname(app.getPath('exe'))
-// 	: __dirname + '/../';
-// const appPath = path.join(__dirname, '../');
+const appPath = process.env.APP_PATH || path.join(__dirname, '../');
 const dbPath = path.join(appPath, config.storage);
 const db = {};
 
