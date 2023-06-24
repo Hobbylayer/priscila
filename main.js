@@ -3,10 +3,11 @@ const path = require('path');
 const url = require('url');
 const { settings } = require('./settings');
 
-const appPath = app.isPackaged
-	? path.dirname(app.getAppPath())
-	: path.join(__dirname, './src/server');
-process.env.APP_PATH = appPath;
+if (app.isPackaged) process.env.APP_PATH = path.dirname(app.getAppPath());
+// const appPath = app.isPackaged
+// 	? path.dirname(app.getAppPath())
+// 	: path.join(__dirname, './src/server');
+// process.env.APP_PATH = appPath;
 
 const db = require('./src/server/models/index');
 

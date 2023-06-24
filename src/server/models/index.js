@@ -9,7 +9,7 @@ const config = isDev
 	: require(__dirname + '/../config/config.json')['production'];
 
 const basename = path.basename(__filename);
-const appPath = process.env.APP_PATH;
+const appPath = process.env.APP_PATH ?? path.join(__dirname, '../../server');
 const dbPath = path.join(appPath, config.storage);
 const db = {};
 

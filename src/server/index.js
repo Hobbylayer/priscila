@@ -1,5 +1,6 @@
 const express = require("express");
 const cors = require("cors");
+// const portfinder = require('portfinder');
 const { User } = require("./models/index");
 
 const app = express();
@@ -33,6 +34,17 @@ app.post("/users", async (req, res) => {
     res.status(500).json({ error: "Error al crear el usuario" });
   }
 });
+
+// portfinder.getPortPromise().then(port => {
+//   console.log(`El puerto: ${port} se encuentra disponible`);
+
+//   app.listen(port, () => {
+//     console.log(`API lanzada sobre el puerto: ${port}`);
+//   })
+// }).catch(err => {
+//   console.log(`Error al buscar un puerto disponible: ${err.message}`);
+// });
+
 const PORT = 4000;
 
 app.listen(PORT, () => {
