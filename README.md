@@ -4,7 +4,7 @@ Aplicación que facilitará el manejo de algunas operaciones relacionados a un s
 
 ## Preparacion del ambiente de desarrollo
 
-### UI
+### Interfaz (UI)
 
 Utilizamos react para construir la ui
 
@@ -18,7 +18,7 @@ $ cd ./src/ui
 $ yarn dev
 ```
 
-### Sever
+### Servidor (Backend)
 
 Utilizaremos express para el backend en forma de API REST
 
@@ -34,7 +34,7 @@ $ cd ./src/server
 $ yarn start
 ```
 
-### Modelos y migraciones
+### Modelos y migraciones (models | migrations)
 Para crear un modelo, que posteriormente será una tabla en la base de datos, se utiliza `sequelize-cli`, esta a su vez genera una migración que sequelize usa a su vez como un commit; a continuación un ejemplo de como crearlo desde la cli
 
 ```bash
@@ -53,7 +53,7 @@ En caso de querer deshacer los cambios realizados previamente en la base de dato
 $ npx sequelize-cli db:migrate:undo
 ```
 
-### Semillas (seed)
+### Semillas (seeders)
 
 Para crear un archivo semilla mediante `sequelize-cli`, se pude seguir el siguiente ejemplo desde la terminal
 
