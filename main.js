@@ -4,7 +4,7 @@ const url = require("url");
 const db = require("./src/server/models/index");
 const { settings } = require("./settings");
 
-const appPath = path.dirname(app.getPath('exe'));
+const appPath = path.dirname(app.getAppPath());
 process.env.APP_PATH = appPath;
 
 const isDev = settings.isDev;
