@@ -5,14 +5,12 @@ const { settings } = require('../../../settings');
 
 const isDev = settings.isDev;
 const config = isDev
-? require(__dirname + '/../config/config.json')['development']
-: require(__dirname + '/../config/config.json')['production'];
+	? require(__dirname + '/../config/config.json')['development']
+	: require(__dirname + '/../config/config.json')['production'];
 
 const basename = path.basename(__filename);
-const appPath = process.env.APP_PATH + '/' || path.join(__dirname, '../../server/');
-console.log(appPath)
-const dbPath = path.join(appPath, config.storage); // appPath
-// console.log(dbPath)
+const appPath = process.env.APP_PATH;
+const dbPath = path.join(appPath, config.storage);
 const db = {};
 
 const sequelize = new Sequelize({

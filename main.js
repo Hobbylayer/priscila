@@ -1,11 +1,14 @@
 const { app, BrowserWindow } = require('electron');
 const path = require('path');
 const url = require('url');
-const db = require('./src/server/models/index');
 const { settings } = require('./settings');
 
-const appPath = path.dirname(app.getAppPath());
+const appPath = app.isPackaged
+	? path.dirname(app.getAppPath())
+	: path.join(__dirname, './src/server');
 process.env.APP_PATH = appPath;
+
+const db = require('./src/server/models/index');
 
 const isDev = settings.isDev;
 
@@ -23,6 +26,7 @@ const createWindow = () => {
 	const win = new BrowserWindow({
 		width: 800,
 		height: 600,
+		// icon: './assets/images/Briefcase.png',
 		webPreferences: {
 			preload: path.join(__dirname, './preload.js'),
 			nodeIntegration: true,
