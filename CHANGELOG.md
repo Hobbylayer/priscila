@@ -8,19 +8,20 @@ y se adhiere al proyecto [Semantic Versioning](http://semver.org/).
 ## [Unreleased] - 20023-06-20
  
 ### Added
-- [PRISCILA-frontend](https://github.com/Hobbylayer/priscila/tree/main/app)
-  Agrega frontend vite/react.
-- [PROJECTNAME-electron](https://github.com/Hobbylayer/priscila/tree/main/electron)
-  Agrega app electron con express API backend.
-- Agrega sqlite3.
-- Agrega una parte del CRUD: `Create`.
+- [PRISCILA-ui](https://github.com/Hobbylayer/priscila/tree/main/src/ui)
+  - Agrega react app.
+  - Agrega configuración de vite.
+- [PRISCILA-server](https://github.com/Hobbylayer/priscila/tree/main/src/server) 
+  - Agrega express API backend.
+  - Agrega sqlite3.
+  - Agrega una parte del CRUD: `Create`.
+- [PROJECTNAME-electron](https://github.com/Hobbylayer/priscila)
 - Agrega scripts para el empaquetado de la aplicación.
 - Agrega node script para manejar los cambios del nombre de archivo que ocurre al realizar el build de vite.
  
 ### Changed
 - Rempleza react-router-dom por wouter.
 
- 
 ### Fixed
 - Corrige manejo de rutas al realizar build del proyecto.
 - Corrige error generado por no encontrar el path de los archivos estáticos tras realizar el build del proyecto. 
