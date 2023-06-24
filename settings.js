@@ -1,5 +1,5 @@
 module.exports = {
-  settings: {
-    isDev: false,
-  },
+	settings: {
+		isDev: false,
+	},
 };

@@ -1,11 +1,13 @@
 const { app, BrowserWindow } = require("electron");
 const path = require("path");
 const url = require("url");
-const db = require("./src/server/database");
+const db = require("./src/server/models/index");
 const { settings } = require("./settings");
 
+const appPath = path.dirname(app.getAppPath());
+process.env.APP_PATH = appPath;
+
 const isDev = settings.isDev;
-if (isDev) require("./src/server/seed");
 
 const createWindow = () => {
   const win = new BrowserWindow({
@@ -30,8 +32,14 @@ const createWindow = () => {
 };
 
 app.whenReady().then(async () => {
-  await db.sequelize.authenticate();
-  await db.sequelize.sync({ force: true });
+  try {
+    await db.sequelize.authenticate();
+    await db.sequelize.sync();
+    console.log('Connection has been established successfully.');
+  } catch (error) {
+    console.error('Unable to connect to the database:', error);
+  }
+
   require("./src/server/index");
   createWindow();
   app.on("activate", () => {
