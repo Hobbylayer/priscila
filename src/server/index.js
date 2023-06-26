@@ -1,7 +1,8 @@
 const express = require("express");
 const cors = require("cors");
 // const portfinder = require('portfinder');
-const { User } = require("./models/index");
+
+const appRoutes = require('./routes');
 
 const app = express();
 
@@ -11,29 +12,7 @@ app.use(
   })
 );
 app.use(express.json());
-
-app.get("/users", async (req, res) => {
-  try {
-    const users = await User.findAll();
-    console.log(users);
-    res.json(users);
-  } catch (error) {
-    console.error(error);
-    res
-      .status(500)
-      .json({ error: "Error al obtener los usuarios", info: error });
-  }
-});
-
-app.post("/users", async (req, res) => {
-  try {
-    const user = await User.create(req.body);
-    res.json(user);
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ error: "Error al crear el usuario" });
-  }
-});
+app.use(appRoutes);
 
 // portfinder.getPortPromise().then(port => {
 //   console.log(`El puerto: ${port} se encuentra disponible`);
