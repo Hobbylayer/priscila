@@ -14,6 +14,9 @@
     "prebuild": "node ./pre-build.js",
     "build": "cd ./src/ui && yarn build && cd ../.. && yarn prebuild && yarn make"
   },
+  "build": {
+    "createWindowsInstaller": false
+  },
   "devDependencies": {
     "@electron-forge/cli": "^6.2.1",
     "@electron-forge/maker-deb": "^6.2.1",

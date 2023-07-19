@@ -1,23 +1,20 @@
 const { app, BrowserWindow } = require('electron');
 const path = require('path');
 const url = require('url');
+
+const handleSquirrelEvent = require('./squirrelStartupHandler');
 const { settings } = require('./settings');
+const db = require('./src/server/models/index');
 
 if (app.isPackaged) process.env.APP_PATH = path.dirname(app.getAppPath());
-// const appPath = app.isPackaged
-// 	? path.dirname(app.getAppPath())
-// 	: path.join(__dirname, './src/server');
-// process.env.APP_PATH = appPath;
-
-const db = require('./src/server/models/index');
 
 const isDev = settings.isDev;
 
-if (require('electron-squirrel-startup')) app.quit();
+if (handleSquirrelEvent(app)) return;
 
 if (process.platform === 'win32') {
 	app.setLoginItemSettings({
-		openAtLogin: true,
+		openAtLogin: false, // true, para ejecutar en el inicio del windows
 		path: process.execPath,
 		args: ['--processStart', `"${process.execPath}"`, '--', 'start'],
 	});
